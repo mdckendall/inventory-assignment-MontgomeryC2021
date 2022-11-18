@@ -5,7 +5,7 @@ class Inventory {
   
   //CUSTOM CODE START
   private ArrayList<Item> items = new ArrayList<Item>();
-  private Scanner scan = new Scanner(System.in);
+  public Scanner scan = new Scanner(System.in);
   public Inventory(){}
   
   public void printMenu(){
@@ -102,13 +102,12 @@ class Main {
 	public static void main(String[] args) {
 
     //CUSTOM CODE START
-    Scanner scan = new Scanner(System.in);
     Inventory inv = new Inventory();
     boolean run = true;
     while (run)
     {
       inv.printMenu();
-      int n =  Integer.valueOf( scan.nextLine() );//scan.nextInt() Causes Bugs
+      int n = Integer.valueOf( inv.scan.nextLine() );//scan.nextInt() Causes Bugs
       run = inv.select(n);
     }
     //CUSTOM CODE END
